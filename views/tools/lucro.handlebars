@@ -1,0 +1,69 @@
+
+<div class="card text-center position-absolute top-50 start-50 translate-middle mt-1" style="margin-top: 30%; margin-bottom:30%; width: 50%;" >
+  <div class="card-header">
+    <br>
+    <p class="fw-bolder font-monospace text-center fs-5">Margem e lucro bruto</p>
+      </div>
+
+{{!-- area com conteudo --}}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+ 
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+<div class="col-md">
+  {{!-- Dados da conta --}}
+                <div class="row g-3">
+          <div class=" col input-group mb-1 w-50 p-3" >
+              <span class="input-group-text">R$</span>
+                  <input id="receita" type="number" class="form-control" placeholder="Faturamento do mês" aria-label="Faturamento do mês" aria-describedby="basic-addon1">
+          </div>
+          <div class=" col input-group mb-1 w-50 p-3" >
+            <span class="input-group-text">%</span>
+                  <input id="gasto" type="number" class="form-control" placeholder="Gasto do mês" aria-label="Gastos do mês" aria-describedby="basic-addon1">
+          </div>
+</div>
+
+{{!-- Botão calcular --}}
+                <div class="input-group mb-3 d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-primary" onclick="calcular()" >Calcular</button>
+                </div>
+{{!-- Resultado --}}
+
+ <div class="input-group mb-3 w-50"  style="margin-left: 25% ; margin-right: 25%;" >
+      <p class="text-center fs-6 text fw-normal lh-1" style="margin-top: 5%; margin-right: 20%; margin-left: 15%; ">Lucro bruto</p>
+            <p class="text-center fs-6 text fw-normal lh-1" style="margin-top: 5%; ">Margem de lucro</p>
+
+                </div>
+
+                <div class="input-group mb-3 w-50"  style="margin-left: 25% ; margin-right: 25%;" >
+                  <input id="lucrobruto" type="text" style="text-align: center; " class="form-control" placeholder="Lucro Bruto" aria-label="Lucro burto" aria-describedby="basic-addon1" readonly>
+                  <input id="margembruto" type="text" style="text-align: center;" class="form-control" placeholder="Margem de lucro" aria-label="Margem de lucro" aria-describedby="basic-addon1" readonly>
+                </div>
+
+
+</div>
+
+  </div> 
+
+  </div>
+
+</div>
+
+{{!-- fim da area com conteudo --}}
+
+</div>
+
+<script>
+    function calcular() {
+        var receita = document.getElementById("receita").value;
+        var gasto = document.getElementById("gasto").value;
+        document.getElementById("lucrobruto")
+            .value = (receita - gasto);
+        var lucrubruto = (receita - gasto);
+        document.getElementById("margembruto")
+            .value = parseFloat(lucrubruto / receita ) * 100 + "%"
+    }
+</script>

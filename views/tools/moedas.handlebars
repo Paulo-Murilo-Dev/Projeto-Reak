@@ -1,0 +1,64 @@
+<div class="card text-center position-absolute top-50 start-50 translate-middle mt-1" style="margin-top: 30%; margin-bottom:30%; width: 50%;">
+  <div class="card-header">
+    <br>
+    <p class="fw-bolder font-monospace text-center fs-5">Conversor de moedas</p>
+  </div>
+  {{!-- area com conteudo --}}
+  {{!-- area da conta --}}
+  <div class="col-md">
+    <div class="input-group mb-3 d-flex justify-content-center" style="margin-top: 5%;">
+      <form action="/moedasCotar" method="POST" class="form-inline">
+        <select class="form-select" name="moeda1" aria-label="Default select example">
+          <option value="BRL" selected>Selecione</option>
+          <option value="BRL">Brasil (Real)</option>
+          <option value="USD">EUA (Dólar)</option>
+          <option value="RUB">Rússia (Rublo)</option>
+          <option value="CAD">Canadá (Dólar)</option>
+          <option value="CNY">China (Iuan)</option>
+          <option value="EUR">Europa (Euro)</option>
+          <option value="DKK">Dinamarca (Coroa)</option>
+          <option value="KRW">Coréia do Sul (Won)</option>
+          <option value="CHF">Suíça (Franco)</option>
+          <option value="GBP">Reino Unido (Libra)</option>
+        </select>
+        <input class="form-control" value="1" name="inputm1" step="0.01" placeholder="$" type="number" min="0.00" max="10000.00">
+        <div class="input-group mb-3 d-flex justify-content-center" style="margin-top: 10%;">
+          <h1 class="fw-bolder font-monospace text-center "> ⇄</h1>
+        </div>
+        <select class="form-select" name="moeda2" aria-label="Default select example">
+          <option value="BRL" selected>Selecione</option>
+          <option value="BRL">Brasil (Real)</option>
+          <option value="USD">EUA (Dólar)</option>
+          <option value="RUB">Rússia (Rublo)</option>
+          <option value="CAD">Canadá (Dólar)</option>
+          <option value="CNY">China (Iuan)</option>
+          <option value="EUR">Europa (Euro)</option>
+          <option value="DKK">Dinamarca (Coroa)</option>
+          <option value="KRW">Coréia do Sul (Won)</option>
+          <option value="CHF">Suíça (Franco)</option>
+          <option value="GBP">Reino Unido (Libra)</option>
+        </select>
+        <div class="col col-lg-2">
+          <div class="input-group mb-3 d-flex justify-content-center" style="margin-top: 5%;"></div>
+        </div>
+    </div>
+    {{#each convertido}}
+      <h5 step="0.01">Cotação de 1 {{moeda1}} em BRL: {{dft}} </h5>
+      <h5 step="0.01">Resultado: {{convertido}} {{moeda2}}</h5>
+    {{else}}
+    {{/each}}
+  </div>
+  <div class="input-group mb-3 d-flex justify-content-center">
+    <button type="submit" class="btn btn-outline-primary">Converter</button>
+    <br>
+  </div>
+  </form>
+  <center>
+    <div class="col col-lg-5">
+      {{#each error}}
+        <div class="border border-danger alert alert-warning">{{error}}</div>
+      {{/each}}
+    </div>
+  </center>
+</div>
+</div>

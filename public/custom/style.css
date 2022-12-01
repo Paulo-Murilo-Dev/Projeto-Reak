@@ -1,0 +1,39 @@
+body{
+    background-color: #e6e2ff;
+}
+ 
+ .escurece{
+    position: relative;
+    z-index: 1;
+ }
+ 
+ .escurece.ativo::before{
+    background-color: #d7d5df;
+    size: 120%;
+ }
+ 
+ .escurece::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    -webkit-transition: background-color .2s ease;
+    transition: background-color .2s ease;
+ }
+ .escurece:hover{
+    size: 110%;
+ }
+
+ a:link, a:visited {
+	text-decoration: none
+	}
+   .aumentar:hover {
+      font-size:110%;
+      }
+a:active {
+	text-decoration: none
+	}
+

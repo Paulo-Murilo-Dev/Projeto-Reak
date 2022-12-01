@@ -1,0 +1,73 @@
+
+<div class="card text-center position-absolute top-50 start-50 translate-middle mt-1" style=" margin-top: 0%;  width: 50%;" >
+  <div class="card-header">
+    <br>
+    <p class="fw-bolder font-monospace text-center fs-5">Calculadora de juros compostos</p>
+      </div>
+
+{{!-- area com conteudo --}}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+ 
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+               {{!-- Dados da conta --}}
+<div class="row g-3">
+          <div class=" col input-group mb-1 w-50 p-3" >
+              <span class="input-group-text">R$</span>
+            <input id="inicial" style="text-align: center;" class="form-control CurrencyInput " placeholder="Capital inicial" aria-label="Dia de vencimento do cartão" aria-describedby="basic-addon1" type="number">
+          </div>
+          <div class=" col input-group mb-1 w-50 p-3" >
+            <span class="input-group-text">%</span>
+            <input id="taxa" style="text-align: center;" type="number" class="form-control" placeholder="Taxa de juros" aria-label="Dia de vencimento do cartão" aria-describedby="basic-addon1">
+          </div>
+         <div class=" col input-group mb-1 w-50 p-3" >
+             <input id="tempo" style="text-align: center;" type="number" class="form-control" placeholder="Período em anos" aria-label="Dia de vencimento do cartão" aria-describedby="basic-addon1">
+          </div>
+</div>
+                {{!-- botão de calcular --}}
+          <div class="input-group mb-3 d-flex justify-content-center" style="margin-top: 5%;" >
+              <button type="button" class="btn btn-outline-primary" onclick="calcular()">Calcular</button>
+          </div>
+
+ <div class="input-group mb-3 w-50"  style="margin-left: 25% ; margin-right: 25%;" >
+      <p class="text-center fs-6 text fw-normal lh-1" style="margin-top: 5%; margin-right: 25%; margin-left: 15%; ">Valor total</p>
+            <p class="text-center fs-6 text fw-normal lh-1" style="margin-top: 5%; ">Total em juros</p>
+
+                </div>
+
+       <div class="input-group mb-3 w-50"  style="margin-left: 25% ; margin-right: 25%;" >
+             <input id="juros" type="text" style="text-align: center;" class=" form-control" placeholder="Valor total" aria-label="Melhor dia para comprar no cartão" aria-describedby="basic-addon1" readonly>
+             <input id="final" type="text" style="text-align: center;" class="form-control" placeholder="Total em juros" aria-label="Melhor dia para comprar no cartão" aria-describedby="basic-addon1" readonly>
+        </div>
+
+
+  </div> 
+
+  </div>
+
+  
+</div>
+
+{{!-- fim da area com conteudo --}}
+
+</div>
+
+<script>
+  
+
+      function calcular(){
+        var inicial = document.getElementById("inicial").value;
+        var taxa = document.getElementById("taxa").value;
+        var tempo = document.getElementById("tempo").value;
+        var taxa_total = (taxa / 100);
+        document.getElementById("final")
+        .value = (inicial * (1 + taxa_total) ** tempo).toFixed(2)
+
+        var final = inicial * (1 + taxa_total) ** tempo;
+        document.getElementById("juros")
+        .value =  ( final - inicial).toFixed(2)
+    }
+</script>

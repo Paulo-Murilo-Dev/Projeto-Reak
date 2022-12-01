@@ -1,0 +1,29 @@
+
+<div class="card text-center position-absolute top-50 start-50 translate-middle mt-1" style="margin-top: 30%; margin-bottom:30%; width: 50%;">
+  <div class="card-header">
+     <p class="text-center fs-3 text fw-semibold font-monospace" style="margin-top: 5%;">Consultar CNPJ</p>
+  </div>
+  {{!-- area com conteudo --}}
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="col-md">
+        <form action="/ApiCnpj" method="POST" class="form-inline">
+
+      <p class="text-center fs-6 text fw-normal lh-1" style="margin-top: 5%; ">Adicione seu CNPJ </p>
+               <div class="input-group mb-3 w-50" style="margin-left: 25% ; margin-right: 25%;">
+              <input  style="text-align: center;" type="number" class="form-control" id="cnpj" name="cnpj" placeholder="Número do CNPJ sem acentos ou traços">
+              </div>
+                <button style="margin-top: 3%;" aling="left" type="submit" class="btn btn-primary mb-2">Consultar CNPJ</button>
+        </form>
+      </div>
+   {{#each error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{else}}
+    {{/each}} 
+    </div>
+  </div>
+ 

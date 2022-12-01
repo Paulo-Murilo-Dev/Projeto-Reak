@@ -1,0 +1,70 @@
+
+<div class="card text-center position-absolute top-50 start-50 translate-middle mt-1" style="margin-top: 30%; margin-bottom:30%; width: 40%;" >
+  <div class="card-header">
+    <br>
+    <p class="fw-bolder font-monospace text-center fs-5">Melhor dia para comprar no cartão</p>
+      </div>
+
+{{!-- area com conteudo --}}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  {{!-- <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Calcular </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Sobre</button>
+  </li> --}}
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+<div class="col-md">
+  
+      <p class="text-center fs-6 text fw-normal lh-1" style="margin-top: 5%; ">Qual dia do vencimento da fatura?</p>
+                <div class="input-group mb-3 w-50" style="margin-left: 25% ; margin-right: 25%;">
+                  <input  type="number" id="n1" class="text-center form-control" placeholder="Vencimento da fatura" max="30" aria-label="Dia de vencimento do cartão" >
+                </div>
+                <div class="input-group mb-3 d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-primary" onclick="somar()">Calcular</button>
+                </div>
+                     <p class="text-center fs-6 text fw-normal lh-1" style="margin-top: 3%;">Melhor dia para comprar no cartão</p>
+                <div class="input-group mb-3 w-25 " style="margin-left: 37% ; margin-right: 37%;">
+                  <span  type="text" class="form-control" id="result" placeholder="" aria-label="Melhor dia para comprar no cartão" aria-describedby="basic-addon1" readonly>0</span>
+                </div>
+                
+</div>
+
+  </div> 
+
+  </div>
+
+  {{!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <p>essa aréa contem informações da ferramenta</p>
+
+  </div> --}}
+</div>
+
+{{!-- fim da area com conteudo --}}
+
+</div>
+
+<script>
+
+function somar() {
+    var n1 =  document.querySelector('#n1')
+var resultado = document.querySelector('#result')
+console.info(n1.value)
+    if (n1.value >= 10){
+        let n2 = ( (parseInt(n1.value) - 10) + 1 ) % 30
+        resultado.innerHTML = n2
+ 
+    }
+    else {
+            resultado.innerHTML = parseInt(n1.value) + parseInt(21)
+            
+        }
+
+}
+
+
+</script>

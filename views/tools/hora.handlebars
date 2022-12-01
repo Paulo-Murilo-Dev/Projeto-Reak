@@ -1,0 +1,76 @@
+
+<div class="card text-center position-absolute top-50 start-50 translate-middle mt-1" style="margin-top: 30%; margin-bottom:30%; width: 50%;" >
+  <div class="card-header">
+    <br>
+    <p class="fw-bolder font-monospace text-center fs-5"> Calculadora de hora extra </p>
+      </div>
+
+{{!-- area com conteudo --}}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+<div class="col-md">
+  {{!-- Dados da conta --}}
+                <div class="row g-3">
+          <div class=" col input-group mb-1 w-50 p-3" >
+              <span class="input-group-text">R$</span>
+                  <input id="salario" type="number" class="form-control" placeholder="Salário bruto" aria-label="Salário bruto" aria-describedby="basic-addon1">
+          </div>
+          <div class=" col input-group mb-1 w-50 p-3" >
+                  <input id="semanal" type="number" class="form-control" placeholder="Horas trabalhadas na semana" aria-label="Horas por semana" aria-describedby="basic-addon1">
+          </div>
+</div>
+
+{{!-- Botão calcular --}}
+                <div class="input-group mb-3 d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-primary" onclick="calcular()" >Calcular</button>
+                </div>
+{{!-- Resultado --}}
+   <div class="input-group mb-3 w-50"  style="margin-left: 25% ; margin-right: 25%;" >
+      <p class="text-center fs-6 text fw-normal lh-1" style="margin-top: 5%; margin-right: 15%; margin-left: 6%; ">Segunda a sábado</p>
+            <p class="text-center fs-6 text fw-normal lh-1" style="margin-top: 5%; ">Domingo e feriados</p>
+
+                </div>
+
+
+                <div class="input-group mb-3 w-50"  style="margin-left: 25% ; margin-right: 25%;" >
+                  <input id="segunda" type="text" style="text-align: center; " class="form-control" placeholder="Segunda a sábado" aria-label="Hora extra de segunda a sábado " aria-describedby="basic-addon1" readonly>
+                  <input id="feriado" type="text" style="text-align: center;" class="form-control" placeholder="Domingo e feriados" aria-label="Hora extra de domingo e feriados" aria-describedby="basic-addon1" readonly>
+                </div>
+
+
+</div>
+
+  </div> 
+
+  </div>
+
+</div>
+
+{{!-- fim da area com conteudo --}}
+
+</div>
+
+
+<script>
+    function calcular(){
+        var semanal = document.getElementById("semanal").value;
+        var salario = document.getElementById("salario").value;
+        var mensal = (semanal * 5);
+        var  hora = (salario / mensal)
+        var metade = (hora / 2)
+        document.getElementById("segunda")
+        .value = ( hora + metade ).toFixed(2)
+
+        var hora = (salario / mensal)
+        document.getElementById("feriado")
+        .value = (hora + hora).toFixed(2)
+
+
+
+    }
+</script>

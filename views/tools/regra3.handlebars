@@ -1,0 +1,67 @@
+
+<div class="card text-center position-absolute top-50 start-50 translate-middle mt-1" style="margin-top: 30%; margin-bottom:30%; width: 50%;" >
+  <div class="card-header">
+    <br>
+    <p class="fw-bolder font-monospace text-center fs-5"> Calculadora de regra de 3 simples </p>
+      </div>
+
+{{!-- area com conteudo --}}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+<div class="col-md">
+  {{!-- Dados da conta --}}
+<div class="row g-3">
+     
+      <div class=" col input-group mb-1 w-50 form-floating" style=" margin-top: 3%; margin-left: 1%; margin-right: 1%;">
+      <input type="email" class="form-control" id="valor_a" placeholder="Primeiro valor">
+      <label style="margin-left: 1%;" for="floatingInputGrid" class="text-align text fw-normal">Primeiro valor</label>
+    </div>
+      <div class=" col input-group mb-1 w-50 form-floating" style=" margin-top: 3%; margin-left: 1%; margin-right: 1%;">
+      <input type="email" class="form-control" id="valor_b" placeholder="Segundo valor">
+      <label style="margin-left: 1%;" for="floatingInputGrid" class="text-align text fw-normal">Segundo valor</label>
+    </div>
+</div>
+<div class="row g-3">
+      <div class=" col input-group mb-1 w-50 form-floating" style=" margin-top: 3%; margin-left: 1%; margin-right: 1%;">
+      <input type="email" class="form-control" id="valor_c" placeholder="Terceiro valor">
+      <label style="margin-left: 1%;" for="floatingInputGrid" class="text-align text fw-normal">Terceiro valor</label>
+    </div>
+{{!-- Resultado --}}
+      <div class=" col input-group mb-1 w-50 form-floating" style=" margin-top: 3%; margin-left: 1%; margin-right: 1%;">
+      <input type="email" class="form-control" id="resultado" placeholder="Resultado" readonly>
+      <label style="margin-left: 1%;" for="floatingInputGrid" class="text-align text fw-normal">Resultado</label>
+    </div>
+</div>
+{{!-- Botão calcular --}}
+                <div class="input-group mb-3 d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-primary" onclick="calcular()" >Calcular</button>
+                </div>
+
+
+</div>
+
+  </div> 
+
+  </div>
+
+
+</div>
+
+{{!-- fim da area com conteudo --}}
+
+</div>
+<script>
+       function calcular() {
+        var valor_a = document.getElementById("valor_a").value;
+        var valor_b = document.getElementById("valor_b").value;
+        var valor_c = document.getElementById("valor_c").value;
+        document.getElementById("resultado")
+            .value = ((valor_b * valor_c / valor_a)).toFixed(0)
+    }
+</script>
+

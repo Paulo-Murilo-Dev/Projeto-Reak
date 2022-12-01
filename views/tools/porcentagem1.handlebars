@@ -1,0 +1,71 @@
+<div class="card text-center position-absolute top-50 start-50 translate-middle mt-1" style="margin-top: 30%; margin-bottom:30%; width: 50%;" >
+  <div class="card-header">
+    <br>
+    <p class="fw-bolder font-monospace text-center fs-5"> Calculadora de porcentagem sobre valor </p>
+      </div>
+
+{{!-- area com conteudo --}}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+ 
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+<div class="col-md">
+  {{!-- Dados da conta --}}
+                <div class="row g-3">
+          <div class=" col input-group mb-1 w-50 p-3" >
+              <span class="input-group-text">R$</span>
+                <input id="valor1" type="number" class="form-control" placeholder="Valor que possui" aria-label="porcentagem" aria-describedby="basic-addon1">
+          </div>
+          <div class=" col input-group mb-1 w-50 p-2" >
+            <p class="fw-bolder font-monospace text-center fs-5" aria-label="Representa quantos % de:"> Representa quantos % de:</p>
+          </div>
+          
+          <div class=" col input-group mb-1 w-50 p-3" >
+              <span class="input-group-text">R$</span>
+               <input id="valor2" type="number" class="form-control" placeholder="Valor" aria-label="Valor" aria-describedby="basic-addon1">
+          </div>
+</div>
+
+{{!-- Botão calcular --}}
+                <div class="input-group mb-3 d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-primary" onclick="calcular2()" >Calcular</button>
+                </div>
+{{!-- Resultado --}}
+ <p class="text-center fs-6 text fw-normal lh-1" style="margin-top: 5%; ">Porcentagem</p>
+                <div class="input-group mb-3 w-50"  style="margin-left: 25% ; margin-right: 25%;" >
+                  <span class="input-group-text">%</span>
+                  <input id="resultado2" type="text" style="text-align: center; " class="form-control" placeholder="Porcentagem" aria-label="Porcentagem" aria-describedby="basic-addon1" readonly>
+                </div>
+
+
+</div>
+
+  </div> 
+
+  </div>
+
+
+</div>
+
+{{!-- fim da area com conteudo --}}
+
+</div>
+
+
+<script>
+
+
+function calcular2() {
+  var valor1 = document.getElementById("valor1").value;
+  var valor2 = document.getElementById("valor2").value;
+  document.getElementById("resultado2")
+      .value = ((valor1 * 100) / valor2 )
+}
+
+
+</script>
+
+

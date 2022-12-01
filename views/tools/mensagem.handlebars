@@ -1,0 +1,118 @@
+<div class="card start-30 position-relative border border-secundary border-2" style=" margin-left: 10%; margin-right: 10%; margin-top: 10%; margin-bottom: 5%;" >
+  <div class="card-header">
+    <p class="fw-bolder font-monospace text-center fs-5">Mensagem auto destrutiva</p>
+      </div>
+
+{{!-- area com conteudo --}}
+
+{{!-- tabela --}}
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      
+{{!-- area de criar mensagem --}}
+
+ <p class="text-center fs-3 text fw-semibold font-monospace" style="margin-top: 5%;">Criar mensagem</p>
+        <form  action="/mensagemCriar" method="POST" class="form-inline">
+        {{#each msg}}
+
+        <div  style="margin-left: 25% ; margin-right: 25%;" class="alert alert-success alert-dismissible fade show" role="alert">
+           {{msg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        {{else}}
+        {{/each}}
+
+        {{#each error}}
+        
+        <div  style="margin-left: 25% ; margin-right: 25%;" class="alert alert-success alert-dismissible fade show" role="alert">
+          {{error}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        {{else}}
+        {{/each}}    
+ 
+  
+<p class="text-center fs-6 text fw-normal lh-1">Código de acesso</p>
+      <div class="input-group mb-3 w-50" style="margin-left: 25% ; margin-right: 25%;">    
+        <input style="text-align: center;" type="text" class="form-control" id="token" name="token" placeholder="Qual será o token da mensagem?">
+      </div>
+
+<p class="text-center fs-6 text fw-normal lh-1">Mensagem</p>
+      <div class="input-group mb-3 w-50 " style="margin-left: 25% ; margin-right: 25%;">
+        <input style="text-align: center;" type="text" class="form-control" id="mensagem" name="mensagem" placeholder="Mensagem">
+
+        <input type="checkbox" class="btn-check" value="1" name="checkbox" id="flexCheckDefault" autocomplete="off">
+        <label class="btn btn-outline-success" for="flexCheckDefault">Destruir mensagem?</label>
+      </div>
+      
+      <div class="input-group mb-3 d-flex justify-content-center" >
+        <button type="submit" class="btn btn-outline-primary" style="margin-top: 2%;" >Criar mensagem</button> 
+      </div>
+  
+</form>
+    </div>
+    <div class="col-sm">
+
+      {{!-- Destruir mensagem --}}
+
+    <p class="text-center fs-3 text fw-semibold font-monospace" style="margin-top: 2%;">Ler mensagem</p>
+
+<form  action="/mensagemLer" method="POST" class="form-inline">
+
+    <p class="text-center fs-6 text fw-normal lh-1">Código de acesso</p>
+      <div class="input-group mb-3 w-50 " style="margin-left: 25% ; margin-right: 25%;">
+        <input type="text" class="form-control" id="token" name="token" placeholder="Token">
+      </div>
+
+      <div class="input-group mb-3 d-flex justify-content-center" >
+        <button type="submit" class="btn btn-outline-primary" >Ler mensagem</button>
+      </div>  
+
+      <p class="text-center fs-6 text fw-normal lh-1" for="p">Esta é a mensagem:</p>
+    {{#each mensagem}}
+      <p class="text-center fs-4 text fw-bold lh-1" style="margin-top: 2%; margin-bottom: 2%;" for="p">{{mensagem}}</p>
+
+  
+    {{else}}
+    {{/each}}
+
+    {{#each destruida}}
+    <div  style="margin-left: 25% ; margin-right: 25%;" class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{destruida}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{else}}
+    
+    {{/each}}  
+    {{#each errorD}}
+
+    <div  style="margin-left: 25% ; margin-right: 25%;" class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{errorD}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {{else}}
+    {{/each}}  
+</form>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+{{!-- fim da area com conteudo --}}

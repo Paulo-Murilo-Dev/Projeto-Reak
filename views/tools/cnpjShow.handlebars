@@ -1,0 +1,43 @@
+<div class="card start-30 position-relative border border-secundary border-2" style=" margin-left: 25%; margin-right: 25%; margin-top: 10%; margin-bottom: 5%;" >
+  <div class="card-header">
+    <p class="fw-bolder font-monospace text-center fs-5">Mensagem auto destrutiva</p>
+      </div>
+
+{{!-- area com conteudo --}}
+
+{{!-- tabela --}}
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      
+
+  <div align="left" class="DivCnpj container row justify-content-start">
+    {{#each convertido}}
+      <label style="font-weight:bold" for="cnpj">CNPJ</label>
+      <p class="cnpj">{{cnpj}}</p>
+      <label style="font-weight:bold" for="email">Email</label>
+      <p class="email">{{email}}</p>
+      <label style="font-weight:bold" for="telefone">Telefone</label>
+      <p class="telefone">{{telefone}}</p>
+      <label style="font-weight:bold" for="fantasia">Nome fantasia</label>
+      <p class="fantasia">{{fantasia}}</p>
+      <label style="font-weight:bold" for="razao">Razão social</label>
+      <p class="razao">{{razao}}</p>
+      <label style="font-weight:bold" for="tipo">Tipo</label>
+      <p class="tipo">{{tipo}}</p>
+      <label style="font-weight:bold" for="capital">Capital</label>
+      <p class="capital">{{capital}}</p>
+      <label style="font-weight:bold" for="data">Data de criação</label>
+      <p class="data">{{data}}</p>
+      <label style="font-weight:bold" for="endereco">Endedreço</label>
+      <p class="endereco">{{logradouro}}</p>
+      <label style="font-weight:bold" for="desc">Descrição</label>
+      <p class="desc">{{descricao}}</p>
+    {{else}}
+    {{/each}}
+  </div>
+
+
+    </div>
+  </div>
+</div>
